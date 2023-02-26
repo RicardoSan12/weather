@@ -1,0 +1,144 @@
+.app{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  
+  width: 100%;
+  min-height: 100vh;
+}
+
+.app__background{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.app__weather{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 10px;
+  justify-items: center;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.form-city{
+  padding: 1rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;  
+}
+.form-city__input, .form-city__button{    
+  font-size: 18px;
+  border-radius: 30px;
+  padding: 16px 20px;
+  background-color: rgba(68, 0, 255, 0.912);
+  backdrop-filter: blur(6px);
+  opacity: .8;
+  transition: opacity 400ms;  
+}
+.form-city__input:hover, .form-city__input:focus, .form-city__input:hover ~ .form-city__button, .form-city__button:hover{
+  opacity: 1;
+}
+
+.weather {
+  background-color: rgba(68, 0, 255, 0.734);
+  border-radius: 20px;
+  padding: 18px;
+  backdrop-filter: blur(6px);
+
+  animation: cart-scale 300ms ease-in;
+}
+@keyframes cart-scale{
+  to{
+    transform: translateY(50px);
+  }
+}
+
+
+.weather__head {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.weather__container-img {
+  position: relative;
+  min-width: 100px;
+  min-height: 100px;
+}
+.weather__img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  transform: scale(1.2);
+}
+.weather__resume {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+.weather__day{
+  font-weight: 600;
+  font-size: 18px;
+}
+.weather__general-temp{
+  font-weight: 600;
+}
+.weather__description, .weather__minmax{
+  font-size: 14px;
+  text-transform: capitalize;
+  font-weight: 400;
+  opacity: .9;
+}
+.weather__minmax{
+  opacity: .8;
+}
+.weather__temp{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 25px;
+  width: 100%;
+}
+.weather__item{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.weather__per{
+  font-size: 15px;
+  font-weight: 500;
+  opacity: .9;
+}
+.weather__subtitle{
+  font-size: 12px;
+  font-weight: 400;
+  opacity: .8;
+}
+
+.loading{
+  display: flex;
+  gap: 35px;
+  margin-top: 40px;
+}
+.loading__point{
+  padding: 10px;
+  border-radius: 50%;
+  background-color: rgba(68, 0, 255, 0.912);
+  backdrop-filter: blur(6px);
+  animation: load alternate 400ms infinite;
+  animation-delay: var(--delay);
+}
+@keyframes load{
+  from{
+    transform: translateY(30px);
+  }
+}
+
+
